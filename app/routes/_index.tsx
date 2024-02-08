@@ -11,7 +11,7 @@ export default function Index() {
       <Box bg="#1e385e" w="100%" p={4} color="white">
         <Flex justifyContent="center">
           <Image
-            height="80px"
+            height="70px"
             src="https://i.postimg.cc/wvJJ9xcg/nh-logo.png"
           />
         </Flex>
@@ -34,7 +34,7 @@ export default function Index() {
                 width="100%"
                 justifyContent={{ base: "space-between", md: "center" }}
                 alignItems="center"
-                gap={{ base: "0px", md: "20px" }}
+                gap={{ base: "0px", md: "30px" }}
               >
                 <Flex
                   id="negative"
