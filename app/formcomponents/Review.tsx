@@ -13,12 +13,14 @@ import {
   Textarea,
   useColorModeValue,
   Text,
+  HStack,
 } from "@chakra-ui/react";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import MonthSelect from "~/formcomponents/date/MonthSelect";
 import StarRating from "~/formcomponents/rating/Star";
+import ReviewTips from "./modal/ReviewTips";
 type TravellerOption = "Business" | "Couples" | "Family" | "Friends" | "Solo";
 
 // Array of traveller types
@@ -226,7 +228,10 @@ export default function Review() {
           </Flex>
 
           <Flex id="reviewtext" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>Write your review</Flex>
+            <HStack w="100%" justifyContent="space-between">
+              <Flex {...questionStyle}>Write your review</Flex>
+              <ReviewTips />
+            </HStack>
             <Textarea
               id="writeReview"
               rows={5}

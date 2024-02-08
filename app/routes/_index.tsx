@@ -7,8 +7,14 @@ import Review from "~/formcomponents/Review";
 export default function Index() {
   const [displayComponent, setDisplayComponent] = useState("");
   return (
-    <Flex h="100vh" w="100%" justifyContent="start" flexDirection="column">
-      <Box bg="#1e385e" w="100%" p={4} color="white">
+    <Flex
+      h="100vh"
+      w="100%"
+      justifyContent="start"
+      flexDirection="column"
+      overflowX="hidden"
+    >
+      <Box bg="#1e385e" w="100%" p={4} color="white" borderTop="1px solid #fff">
         <Flex justifyContent="center">
           <Image
             height="70px"

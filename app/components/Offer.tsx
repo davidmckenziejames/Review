@@ -79,10 +79,10 @@ export default function Offer() {
         >
           CLAIM DISCOUNT
         </Flex>
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal isCentered isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent>
-            <VStack position="relative" py="20px" px="10px">
+          <ModalContent maxW="90%">
+            <VStack position="relative" py="30px" px="10px">
               <Box
                 onClick={onClose}
                 position="absolute"
@@ -110,7 +110,7 @@ export default function Offer() {
                 <FormLabel>Full Name</FormLabel>
                 <Input type="text" placeholder="John Doe" />
                 <FormLabel mt="10px">Email address</FormLabel>
-                <Input type="email" placeholder="lNcJt@example.com" />
+                <Input type="email" placeholder="yourname@example.com" />
                 <Button
                   w="100%"
                   mt="20px"
