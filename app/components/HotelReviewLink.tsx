@@ -1,5 +1,6 @@
 import { Flex, Box, Image, VStack } from "@chakra-ui/react";
-export default function ReviewLink() {
+import RefreshInfo from "./RefreshInfo";
+export default function HotelReviewLink() {
   return (
     <VStack
       bg="#fff"
@@ -8,6 +9,7 @@ export default function ReviewLink() {
       w={{ base: "100%", md: "700px" }}
       textAlign={"center"}
     >
+      <RefreshInfo />
       <Flex direction="column" alignItems="center" width="100%" gap="10px">
         <Flex
           mb="5px"
@@ -26,7 +28,7 @@ export default function ReviewLink() {
           lineHeight={{ base: "1.4em", md: "1.2em" }}
           w={{ base: "90%", md: "420px" }}
         >
-          We are a new business and a review of any length would be greatly
+          We are a growing business and a review of any length would be greatly
           appreciated!
         </Flex>
         <Flex
@@ -34,14 +36,14 @@ export default function ReviewLink() {
           width="100%"
           justifyContent={{ base: "unset", md: "center" }}
           alignItems={{ base: "center", md: "unset" }}
-          gap={{ base: "25px", md: "15px" }}
+          gap={{ base: "25px", md: "20px" }}
           py="20px"
         >
           <Box
             as="a"
-            href="https://www.booking.com/hotel/gb/holgatebridgehotel.en-gb.html"
+            href="https://www.booking.com/"
             target="_blank"
-            id="TripAdvisor"
+            id="Booking"
           >
             <Image
               src="http://assets.vipflow.co.uk/files/booking-logo.png"
@@ -52,9 +54,9 @@ export default function ReviewLink() {
           </Box>
           <Box
             as="a"
-            href="https://www.google.com/maps/place/New+Holgate/@53.9540367,-1.1031053,17z/data=!4m11!3m10!1s0x487931e4d6cbea93:0x9c43693d1dd06568!5m2!4m1!1i2!8m2!3d53.9540367!4d-1.1005304!9m1!1b1!16s%2Fg%2F11l6wrzlwm?entry=ttu"
+            href="https://www.google.com/maps/"
             target="_blank"
-            id="TripAdvisor"
+            id="Google"
           >
             <Image
               src="http://assets.vipflow.co.uk/files/google-logo.png"
@@ -65,13 +67,26 @@ export default function ReviewLink() {
           </Box>
           <Box
             as="a"
-            href="https://www.tripadvisor.com/UserReviewEdit-g186346-d490387-New_Holgate-York_North_Yorkshire_England.html"
+            href="https://www.tripadvisor.com/"
             target="_blank"
             id="TripAdvisor"
           >
             <Image
               src="http://assets.vipflow.co.uk/files/tripadvisor-logo-1.png"
               alt="TripAdvisor"
+              height={{ base: "45px", md: "50px" }}
+              objectFit="contain"
+            />
+          </Box>
+          <Box
+            as="a"
+            href="https://www.expedia.com/"
+            target="_blank"
+            id="Expedia"
+          >
+            <Image
+              src="http://assets.vipflow.co.uk/files/expedia-logo.png"
+              alt="Expedia"
               height={{ base: "45px", md: "50px" }}
               objectFit="contain"
             />

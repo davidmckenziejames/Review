@@ -20,16 +20,16 @@ import { useNavigate } from "react-router-dom";
 
 import MonthSelect from "~/formcomponents/date/MonthSelect";
 import StarRating from "~/formcomponents/rating/Star";
-import ReviewTips from "./modal/ReviewTips";
+import PestReviewTips from "./PestReviewTips";
 type TravellerOption = "Business" | "Couples" | "Family" | "Friends" | "Solo";
 
 // Array of traveller types
 const travellers: TravellerOption[] = [
-  "Business",
-  "Couples",
-  "Family",
-  "Friends",
-  "Solo",
+  "Rodents",
+  "Crawling Insects",
+  "Birds",
+  "Flying Insects",
+  "Other",
 ];
 
 const questionStyle = {
@@ -40,7 +40,7 @@ const questionStyle = {
   margin: "0",
 };
 
-export default function Review() {
+export default function PestReview() {
   const inputBg = useColorModeValue("#fff", "gray.700");
   const fileInputRef = useRef<HTMLInputElement>(null);
   const countCharacters = (
@@ -76,6 +76,10 @@ export default function Review() {
   const handleTravellerClick = (traveller: TravellerOption) => {
     setSelectedTraveller(traveller);
   };
+  const [arrivedOnTime, setArrivedOnTime] = useState<boolean | null>(null);
+  const [technicianProfessional, setTechnicianProfessional] = useState<
+    boolean | null
+  >(null);
   const triggerFilePicker = () => {
     fileInputRef.current?.click(); // Programmatically click the hidden file input
   };
@@ -127,7 +131,7 @@ export default function Review() {
           >
             <Image
               height="80px"
-              src="http://assets.vipflow.co.uk/files/new-holgate.jpg"
+              src="https://dynopest.co.uk/wp-content/uploads/2022/10/mg_9873-3-scaled-e1670942670480.jpg"
             />
             <Flex flexDirection="column">
               <Flex
@@ -137,7 +141,7 @@ export default function Review() {
                 lineHeight="1em"
                 margin="0"
               >
-                New Holgate
+                Dyno-Pest
               </Flex>
               <Flex
                 pb="6px"
@@ -164,7 +168,7 @@ export default function Review() {
             lineHeight="1em"
             margin="0"
           >
-            Tell us, how was your stay?
+            How was our service?
           </Flex>
           <Flex id="rating" flexDirection={"column"} w="100%">
             <Flex {...questionStyle}>How would you rate your experience?</Flex>
@@ -172,12 +176,12 @@ export default function Review() {
           </Flex>
 
           <Flex id="month" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>When did you visit?</Flex>
+            <Flex {...questionStyle}>When was this service?</Flex>
             <MonthSelect />
           </Flex>
 
           <Flex id="who" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>Who did you travel with?</Flex>
+            <Flex {...questionStyle}>Which pest problem?</Flex>
             <Flex flexWrap={"wrap"} columnGap="15px" rowGap="15px">
               {travellers.map((traveller) => (
                 <Flex
@@ -202,6 +206,86 @@ export default function Review() {
                   {traveller}
                 </Flex>
               ))}
+            </Flex>
+          </Flex>
+
+          <Flex id="onTime" flexDirection={"column"} w="100%">
+            <Flex {...questionStyle}>Did we arrive on time?</Flex>
+            <Flex justifyContent="start" gap="10px">
+              <Button
+                variant={arrivedOnTime === true ? "solid" : "outline"}
+                colorScheme={arrivedOnTime === true ? "green" : undefined}
+                onClick={() => setArrivedOnTime(true)}
+              >
+                Yes
+              </Button>
+              <Button
+                variant={arrivedOnTime === false ? "solid" : "outline"}
+                colorScheme={arrivedOnTime === false ? "red" : undefined}
+                onClick={() => setArrivedOnTime(false)}
+              >
+                No
+              </Button>
+            </Flex>
+          </Flex>
+
+          {/* New yes/no question */}
+          <Flex id="technicianProfessional" flexDirection={"column"} w="100%">
+            <Flex {...questionStyle}>Was the technician professional?</Flex>
+            <Flex justifyContent="start">
+              <Button
+                variant={technicianProfessional === true ? "solid" : "outline"}
+                colorScheme={
+                  technicianProfessional === true ? "green" : undefined
+                }
+                onClick={() => setTechnicianProfessional(true)}
+              >
+                Yes
+              </Button>
+              <Button
+                variant={technicianProfessional === false ? "solid" : "outline"}
+                colorScheme={
+                  technicianProfessional === false ? "red" : undefined
+                }
+                onClick={() => setTechnicianProfessional(false)}
+              >
+                No
+              </Button>
+            </Flex>
+          </Flex>
+
+          <Flex id="technicianProfessional" flexDirection={"column"} w="100%">
+            <Flex {...questionStyle}>
+              Please select true statements about pest tech
+            </Flex>
+            <Flex justifyContent="start">
+              <Button
+                variant={technicianProfessional === true ? "solid" : "outline"}
+                colorScheme={
+                  technicianProfessional === true ? "green" : undefined
+                }
+                onClick={() => setTechnicianProfessional(true)}
+              >
+                Arrived on Time
+              </Button>
+              <Button
+                variant={technicianProfessional === false ? "solid" : "outline"}
+                colorScheme={
+                  technicianProfessional === false ? "red" : undefined
+                }
+                onClick={() => setTechnicianProfessional(false)}
+              >
+                Acted Professionally
+              </Button>
+              <Button
+                variant={technicianProfessional === false ? "solid" : "outline"}
+                colorScheme={
+                  technicianProfessional === false ? "red" : undefined
+                }
+                onClick={() => setTechnicianProfessional(false)}
+              >
+                Presentably Dressed
+              </Button>
             </Flex>
           </Flex>
 
@@ -230,7 +314,7 @@ export default function Review() {
           <Flex id="reviewtext" flexDirection={"column"} w="100%">
             <HStack w="100%" justifyContent="space-between">
               <Flex {...questionStyle}>Write your review</Flex>
-              <ReviewTips />
+              <PestReviewTips />
             </HStack>
             <Textarea
               id="writeReview"

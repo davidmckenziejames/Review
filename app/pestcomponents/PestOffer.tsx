@@ -13,12 +13,12 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-export default function Offer() {
+export default function PestOffer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Flex
-        bg="#1e385e"
+        bg="#122036"
         color="#fff"
         position="fixed"
         justify={{ base: "space-between", md: "center" }}
@@ -28,7 +28,7 @@ export default function Offer() {
         py={{ base: "10px", md: "5px" }}
         left={0}
         bottom={0}
-        borderRadius="5px"
+        borderRadius="5px 5px 0px 0px"
         w="100%"
       >
         <Image
@@ -41,7 +41,7 @@ export default function Offer() {
           lineHeight="1em"
           textAlign="center"
         >
-          Want 30% off your next stay?
+          Want 20% off pest monitoring?
         </Flex>
         <Flex
           id="mobileButton"
@@ -57,7 +57,7 @@ export default function Offer() {
           color="#1e385e"
           display={{ base: "unset", md: "none" }}
           _hover={{
-            bg: "#2FBDC0",
+            bg: "#e35534",
             color: "#fff",
           }}
         >
@@ -76,6 +76,10 @@ export default function Offer() {
           bg="#fff"
           color="#1e385e"
           display={{ base: "none", md: "unset" }}
+          _hover={{
+            bg: "#e35534",
+            color: "#fff",
+          }}
         >
           CLAIM DISCOUNT
         </Flex>

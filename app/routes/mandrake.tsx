@@ -3,20 +3,18 @@ import { Box, Flex, Image, VStack } from "@chakra-ui/react";
 import HotelReviewLink from "~/components/HotelReviewLink";
 import HotelReview from "~/formcomponents/HotelReview";
 import HotelOffer from "~/components/HotelOffer";
-import RefreshInfo from "~/components/RefreshInfo";
 
 // Company Branding & Details
-const brandBG = "#1e385e";
+const brandBG = "#201e1f";
 const brandAccent = "#b2b078";
-const brandLogo =
-  "https://www.newholgate.com/wp-content/uploads/2023/01/NH-White-Gold-Main.png";
-const companyImage = "http://assets.vipflow.co.uk/files/new-holgate.jpg";
-const companyName = "New Holgate";
-const companyStreet = "106-108 Holgate Road";
-const companyCity = "York";
+const brandLogo = "http://assets.vipflow.co.uk/files/manrake-logo.png";
+const companyImage = "http://assets.vipflow.co.uk/files/mandrake-room.jpeg";
+const companyName = "The Mandrake";
+const companyStreet = "20-21 Newman Street";
+const companyCity = "London";
 const companyCountry = "United Kingdom";
 
-export default function Index() {
+export default function Mandrake() {
   const [displayComponent, setDisplayComponent] = useState("");
   return (
     <Flex
