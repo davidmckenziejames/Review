@@ -3,7 +3,6 @@ import { Box, Flex, Image, VStack } from "@chakra-ui/react";
 import HotelReviewLink from "~/components/HotelReviewLink";
 import HotelReview from "~/formcomponents/HotelReview";
 import HotelOffer from "~/components/HotelOffer";
-import RefreshInfo from "~/components/RefreshInfo";
 
 // Company Branding & Details
 const brandBG = "#1e385e";
