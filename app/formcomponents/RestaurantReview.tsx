@@ -44,10 +44,9 @@ const questionStyle = {
   fontSize: "18px",
   lineHeight: "1em",
   margin: "0",
-  textAlign: "left",
 };
 
-export default function HotelReview({
+export default function RestaurantReview({
   brandBG,
   brandAccent,
   companyName,
@@ -142,7 +141,12 @@ export default function HotelReview({
             p="15px"
             gap="15px"
           >
-            <Image height="70px" src={companyImage} />
+            <Image
+              height="70px"
+              width="70px"
+              objectFit="cover"
+              src={companyImage}
+            />
             <Flex flexDirection="column">
               <Flex
                 pb="10px"
@@ -185,17 +189,23 @@ export default function HotelReview({
             Tell us, how was your stay?
           </Flex>
           <Flex id="rating" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>How would you rate your experience?</Flex>
+            <Flex textAlign={"left"} {...questionStyle}>
+              How would you rate your experience?
+            </Flex>
             <StarRating rating={rating} setRating={setRating} />
           </Flex>
 
           <Flex id="month" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>When did you visit?</Flex>
+            <Flex textAlign={"left"} {...questionStyle}>
+              When did you visit?
+            </Flex>
             <MonthSelect />
           </Flex>
 
           <Flex id="who" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>Who did you travel with?</Flex>
+            <Flex textAlign={"left"} {...questionStyle}>
+              Who did you dine with?
+            </Flex>
             <Flex flexWrap={"wrap"} columnGap="15px" rowGap="15px">
               {travellers.map((traveller) => (
                 <Flex
@@ -224,7 +234,9 @@ export default function HotelReview({
           </Flex>
 
           <Flex id="reviewtitle" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>Title your review</Flex>
+            <Flex textAlign={"left"} {...questionStyle}>
+              Title your review
+            </Flex>
             <Input
               type="text"
               id="textInput"
@@ -247,7 +259,9 @@ export default function HotelReview({
 
           <Flex id="reviewtext" flexDirection={"column"} w="100%">
             <HStack w="100%" justifyContent="space-between">
-              <Flex {...questionStyle}>Write your review</Flex>
+              <Flex textAlign={"left"} {...questionStyle}>
+                Write your review
+              </Flex>
               <ReviewTips />
             </HStack>
             <Textarea
@@ -277,7 +291,7 @@ export default function HotelReview({
             w="100%"
             onClick={triggerFilePicker}
           >
-            <Flex {...questionStyle}>
+            <Flex textAlign={"left"} {...questionStyle}>
               Add some photos
               <Box fontSize={"14px"} ml="5px" fontWeight={"400"}>
                 (optional)
@@ -334,7 +348,9 @@ export default function HotelReview({
           </Flex>
 
           <Flex id="fullname" flexDirection={"column"} w="100%">
-            <Flex {...questionStyle}>Full Name</Flex>
+            <Flex textAlign={"left"} {...questionStyle}>
+              Full Name
+            </Flex>
             <Input
               type="text"
               placeholder="Enter your full name"
@@ -358,7 +374,7 @@ export default function HotelReview({
             <Text lineHeight="1.6em" textAlign="left" fontSize={"16px"}>
               <Checkbox size="lg" display={"inline"} mr="6px" bottom="-3px" />I
               certify that this review is based on my own experience and is my
-              genuine opinion of this hotel, and that I have no personal or
+              genuine opinion of this restaurant, and that I have no personal or
               business relationship with this establishment.
             </Text>
           </Flex>

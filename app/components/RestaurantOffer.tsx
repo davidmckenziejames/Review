@@ -19,7 +19,7 @@ interface OfferProps {
   brandAccent: string;
 }
 
-export default function HotelOffer({ brandBG, brandAccent }: OfferProps) {
+export default function RestaurantOffer({ brandBG, brandAccent }: OfferProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -51,7 +51,7 @@ export default function HotelOffer({ brandBG, brandAccent }: OfferProps) {
           lineHeight="1em"
           textAlign="center"
         >
-          Want 30% off your next stay?
+          Want 30% off your next meal?
         </Flex>
         <Flex
           id="mobileButton"
