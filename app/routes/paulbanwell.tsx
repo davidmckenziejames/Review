@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Flex, Image, VStack } from "@chakra-ui/react";
 import ClinicReviewLink from "~/components/ClinicReviewLink";
 import ClinicReview from "~/components/ClinicReview";
+import OfferBar from "~/components/OfferBar";
 
 // Company Branding & Details
 const brandBG = "#e5e5e5";
@@ -14,7 +15,7 @@ const companyName = "The Banwell Clinic";
 const companyStreet = "McIndoe Surgical Centre, Holtye Road";
 const companyCity = "East Grinstead,";
 const companyCountry = "United Kingdom";
-
+const offerText = "30% off Artis supplements";
 export default function PaulBanwell() {
   const [displayComponent, setDisplayComponent] = useState("");
   return (
@@ -143,6 +144,11 @@ export default function PaulBanwell() {
           />
         )}
       </VStack>
+      <OfferBar
+        brandBG="#111"
+        brandAccent={brandAccent}
+        offerText={offerText}
+      />
     </Flex>
   );
 }
