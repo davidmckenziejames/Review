@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Flex, Image, VStack } from "@chakra-ui/react";
-import RestaurantReview from "~/formcomponents/RestaurantReview";
 import ClinicReviewLink from "~/components/ClinicReviewLink";
+import ClinicReview from "~/components/ClinicReview";
 
 // Company Branding & Details
 const brandBG = "#e5e5e5";
@@ -132,7 +132,7 @@ export default function PaulBanwell() {
         )}
         {displayComponent === "ReviewLink" && <ClinicReviewLink />}
         {displayComponent === "Review" && (
-          <RestaurantReview
+          <ClinicReview
             brandBG={brandBG}
             brandAccent={brandAccent}
             companyImage={companyImage}
