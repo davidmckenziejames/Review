@@ -3,10 +3,10 @@ import RefreshInfo from "~/components/RefreshInfo";
 
 const logos = [
   {
-    id: "Google",
+    id: "Realself",
     href: "https://www.realself.com/dr/paul-banwell-east-grinstead-united-kingdom#reviews",
     src: "http://assets.vipflow.co.uk/files/realself-logo.jpg",
-    alt: "Google",
+    alt: "Realself",
   },
   {
     id: "Realself",

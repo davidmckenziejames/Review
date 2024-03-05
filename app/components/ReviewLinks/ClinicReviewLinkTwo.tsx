@@ -1,22 +1,28 @@
 import { Flex, Box, Image, VStack } from "@chakra-ui/react";
-import RefreshInfo from "../RefreshInfo";
+import RefreshInfo from "~/components/RefreshInfo";
 
 const logos = [
   {
-    id: "Trustpilot",
-    href: "https://www.trustpilot.com",
-    src: "http://assets.vipflow.co.uk/files/trustpilot-logo-form.png",
-    alt: "Trustpilot",
+    id: "Realself",
+    href: "https://www.realself.com/",
+    src: "http://assets.vipflow.co.uk/files/realself-logo.jpg",
+    alt: "Realself",
   },
   {
-    id: "Google",
-    href: "https://www.google.com/maps",
+    id: "Facebook",
+    href: "https://www.facebook.com/",
+    src: "http://assets.vipflow.co.uk/files/facebook-logo.jpg",
+    alt: "Facebook",
+  },
+  {
+    id: "Realself",
+    href: "https://www.google.com/maps/",
     src: "http://assets.vipflow.co.uk/files/google-logo.png",
     alt: "Google",
   },
 ];
 
-export default function ServiceReviewLink() {
+export default function ClinicReviewLinkTwo() {
   return (
     <VStack
       bg="#fff"
