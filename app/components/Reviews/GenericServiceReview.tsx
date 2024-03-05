@@ -28,6 +28,14 @@ interface CompanyProps {
   companyCountry: string;
   companyImage: string;
 }
+// Array of traveller types
+const travellers: TravellerOption[] = [
+  "Business",
+  "Couples",
+  "Family",
+  "Friends",
+  "Solo",
+];
 
 const questionStyle = {
   pb: "15px",
@@ -37,7 +45,7 @@ const questionStyle = {
   margin: "0",
 };
 
-export default function ClinicReview({
+export default function GenericServiceReview({
   brandBG,
   brandAccent,
   companyName,
@@ -171,7 +179,7 @@ export default function ClinicReview({
             margin="0"
             textAlign={"left"}
           >
-            Tell us, how was your treatment?
+            Tell us, how did we do?
           </Flex>
           <Flex id="rating" flexDirection={"column"} w="100%">
             <Flex {...questionStyle}>How would you rate your experience?</Flex>
@@ -317,7 +325,7 @@ export default function ClinicReview({
             <Text lineHeight="1.6em" textAlign="left" fontSize={"16px"}>
               <Checkbox size="lg" display={"inline"} mr="6px" bottom="-3px" />I
               certify that this review is based on my own experience and is my
-              genuine opinion of this clinic, and that I have no personal or
+              genuine opinion of this business, and that I have no personal or
               business relationship with this establishment.
             </Text>
           </Flex>
