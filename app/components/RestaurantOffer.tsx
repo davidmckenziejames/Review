@@ -51,7 +51,7 @@ export default function RestaurantOffer({ brandBG, brandAccent }: OfferProps) {
           lineHeight="1em"
           textAlign="center"
         >
-          Want 30% off your next meal?
+          Want 30% off your next stay?
         </Flex>
         <Flex
           id="mobileButton"

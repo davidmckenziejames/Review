@@ -1,36 +1,22 @@
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-
 import { Box, Flex, Image, VStack } from "@chakra-ui/react";
-import ClinicReviewLink from "~/components/ClinicReviewLink";
-import ClinicReview from "~/components/ClinicReview";
-import OfferBar from "~/components/OfferBar";
-const supabaseUrl = "https://tnfonfdcllakcoxekeau.supabase.co"; // Replace with your Supabase project URL
-const supabaseAnonKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRuZm9uZmRjbGxha2NveGVrZWF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTEwNTU4NzksImV4cCI6MjAyNjYzMTg3OX0.jTRtN-mCP5MmpMAyvkCG9h52J69Tn0R1RD-oP5wxPVg";
+import RestaurantReviewLink from "~/components/RestaurantReviewLink";
+import RestaurantOffer from "~/components/RestaurantOffer";
+import RestaurantReview from "~/formcomponents/RestaurantReview";
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
 // Company Branding & Details
-const brandBG = "#e5e5e5";
-const brandAccent = "#bfa70d";
+const brandBG = "#2e2e2e";
+const brandAccent = "#b68548";
 const brandLogo =
-  "https://www.paulebanwell.com/wp-content/themes/pb/img/logo.png";
+  "https://www.thefatbadgerharrogate.com/wp-content/themes/fatbadger/images/logo_small.svg";
 const companyImage =
-  "https://www.banwellclinic.com/wp-content/uploads/2015/12/pb-internal-banner.jpg";
-const companyName = "The Banwell Clinic";
-const companyStreet = "McIndoe Surgical Centre, Holtye Road";
-const companyCity = "East Grinstead,";
+  "https://www.hrhgroupharrogate.com/hrh-fatbadger/wp-content/uploads/sites/4/2021/10/untitled-1608-x-613-px-10-1608x613.png";
+const companyName = "Fat Badger";
+const companyStreet = " Cold Bath Road";
+const companyCity = "Harrogate";
 const companyCountry = "United Kingdom";
-const offerText = "30% off Artis supplements";
-async function fetchData() {
-  const { data, error } = await supabase.from("Companies").select("*");
 
-  if (error) console.log("Error:", error);
-  else console.log("Data:", data);
-}
-
-fetchData();
-export default function PaulBanwell() {
+export default function FatBadger() {
   const [displayComponent, setDisplayComponent] = useState("");
   return (
     <Flex
@@ -50,7 +36,7 @@ export default function PaulBanwell() {
       >
         <Flex justifyContent="center">
           <Image
-            height="40px"
+            height="50px"
             objectFit="contain"
             width="auto"
             src={brandLogo}
@@ -145,9 +131,9 @@ export default function PaulBanwell() {
             </Flex>
           </VStack>
         )}
-        {displayComponent === "ReviewLink" && <ClinicReviewLink />}
+        {displayComponent === "ReviewLink" && <RestaurantReviewLink />}
         {displayComponent === "Review" && (
-          <ClinicReview
+          <RestaurantReview
             brandBG={brandBG}
             brandAccent={brandAccent}
             companyImage={companyImage}
@@ -158,11 +144,7 @@ export default function PaulBanwell() {
           />
         )}
       </VStack>
-      <OfferBar
-        brandBG="#111"
-        brandAccent={brandAccent}
-        offerText={offerText}
-      />
+      <RestaurantOffer brandBG={brandBG} brandAccent={brandAccent} />
     </Flex>
   );
 }
